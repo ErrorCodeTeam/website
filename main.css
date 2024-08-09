@@ -5,7 +5,7 @@
   --heo-white-op: rgba(255,255,255,0.2);
   --heo-black: #000;
   --heo-black-op: rgba(0,0,0,0.2);
-  --heo-none: #00000000;
+  --heo-none: #00001e00;
   --heo-gray: #999999;
   --heo-gray-op: #9999992b;
   --heo-vip: #e5a80d;
@@ -40,16 +40,16 @@
   --heo-theme-op: #4375ff23;
   --heo-theme-op-deep: #4375ffdd;
   --heo-theme-none: #4375ff01;
-  --heo-blue: #425AEF;
+  --heo-blue: #3478f5;
   --heo-red: #D8213C;
   --heo-pink: #FF7C7C;
   --heo-green: #28a63f;
   --heo-yellow: #c28b00;
   --heo-yellow-op: #d99c001a;
-  --heo-orange: #e38100;
-  --heo-fontcolor: #000000;
+  --heo-orange: #ffc635;
+  --heo-fontcolor: #00001e;
   --heo-background: #F5F5F7;
-  --heo-navbg: #333333;
+  --heo-navbg: rgba(22, 22, 23, 0.91);
   --heo-reverse: #000;
   --heo-maskbg: rgba(255, 255, 255, 0.6);
   --heo-maskbgdeep: rgba(255, 255, 255, 0.85);
@@ -61,7 +61,7 @@
   --heo-card-btn-bg: #1C1C1F;
   --heo-post-blockquote-bg: #fafcff;
   --heo-post-tabs-bg: #f2f5f8;
-  --heo-secondbg: #e1e3ea;
+  --heo-secondbg: #eaeaea;
   --heo-shadow-nav:0 5px 12px -5px rgba(102, 68, 68, 0.05);
   --heo-card-bg: #fff;
   --heo-card-bg-op: var(--heo-black-op);
@@ -74,9 +74,9 @@
 }
 
 @keyframes floating {
-  0% { transform: translate(0,  -7px); }
-  50%  { transform: translate(0, 7px); }
-  100%   { transform: translate(0, -7px); }   
+  0% { transform: translate(0,  0px); }
+  50%  { transform: translate(0, 10px); }
+  100%   { transform: translate(0, 0px); }   
 }
 
 @keyframes showbanner {
@@ -141,10 +141,10 @@ sup {
   color: var(--heo-white);
   padding: 4px;
   border-radius: 4px;
-  margin-left: 4px;
+  margin-left: 6px;
   white-space: nowrap;
   position: absolute;
-  top: -2px;
+  top: -4px;
 }
 
 sup.hot {
@@ -167,6 +167,7 @@ img {
   align-items: center;
   z-index: 2;
   transition: ease-in-out 0.3s;
+  backdrop-filter: blur(10px); /* 调整模糊效果的值 */
 }
 
 .nav-content {
@@ -175,8 +176,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 44px;
-  background: var(--heo-navbg);
+  height: 60px;
   z-index: 2;
   transition: ease-in-out 0.3s;
 }
@@ -203,6 +203,10 @@ img {
   color: var(--heo-fontcolor);
 }
 
+.nav-banner a:hover {
+  color: var(--heo-main);
+}
+
 .nav-right .nav-menu {
   display: none;
 }
@@ -213,7 +217,7 @@ a.site-logo {
 }
 
 img.site-logo-img {
-  width: 20px;
+  width: 25px;
 }
 
 .menu-list {
@@ -222,7 +226,6 @@ img.site-logo-img {
 
 .banner-img {
   width: 405px;
-  height: 348px;
   max-width: 100%;
   animation: floating 4s ease-in-out infinite;
   pointer-events:none;
@@ -232,7 +235,7 @@ img.site-logo-img {
 
 span.site-name {
   color: var(--heo-white);
-  font-size: 12px;
+  font-size: 14px;
   margin-left: 8px;
 }
 
@@ -240,12 +243,16 @@ a.nav-item {
   color: var(--heo-white);
   opacity: 0.8;
   transition: ease-in-out 0.3s;
-  font-size: 12px;
-  margin-left: 12px;
+  font-size: 14px;
+  margin: 0 2px;
+  padding: 4px 8px;
+  border-radius: 16px;
 }
 
 a.nav-item:hover {
   opacity: 1;
+  background: var(--heo-card-bg);
+  color: var(--heo-fontcolor);
 }
 
 .nav-right {
@@ -264,21 +271,22 @@ a.nav-item:hover {
 .title-group {
   display: flex;
   flex-direction: column;
-  font-size: 45px;
+  font-size: 70px;
   font-weight: 400;
-  color: #000000;
-  line-height: 61px;
+  color: #00001e;
+  line-height: 75px;
   font-weight: bold;
+  font-family: system-ui;
 }
 
 span.discription-text {
   display: block;
-  font-size: 25px;
+  font-size: 28px;
   font-weight: 400;
-  color: #000000;
+  color: #00001e;
   line-height: 34px;
-  max-width: 422px;
   margin-top: 28px;
+  font-weight: bold;
 }
 
 a.about-button {
@@ -332,14 +340,30 @@ h2.group-title {
 }
 
 a.group-item-icon {
-  width: 122px;
-  height: 122px;
+  width: 100px;
+  height: 100px;
 }
 
 img.group-item-icon-img {
-  width: 122px;
-  height: 122px;
+  width: 100px;
+  height: 100px;
   border-radius: 28px;
+}
+
+.group-info-button {
+  display: flex;
+  align-items: center;
+}
+
+span.linkbotton-tips {
+  display: flex;
+  margin-left: 10px;
+  font-size: 12px;
+  color: var(--heo-secondtext);
+}
+
+.special-card span.linkbotton-tips {
+  color: var(--heo-white);
 }
 
 .group-info {
@@ -352,16 +376,17 @@ img.group-item-icon-img {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 122px;
+  height: 100px;
 }
 
 .group-info-group a.title {
   color: var(--heo-fontcolor);
-  font-size: 24px;
+  font-size: 20px;
   line-height: 1;
   margin-bottom: 8px;
   width: fit-content;
   position: relative;
+  font-weight: bold;
 }
 
 .group-info-group a.discription {
@@ -373,17 +398,16 @@ img.group-item-icon-img {
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2; /* 这里是超出几行省略 */
+  -webkit-line-clamp: 1; /* 这里是超出几行省略 */
   overflow: hidden;
 }
 
 a.linkbutton {
-  padding: 8px 24px;
+  padding: 6px 20px;
   display: flex;
-  background: var(--heo-card-btn-bg);
+  background: var(--heo-blue);
   color: var(--heo-white);
-  font-size: 16px;
-  box-shadow: 0px 12px 12px -9px rgba(0,0,0,0.29);
+  font-size: 14px;
   border-radius: 21px;
   transition: ease-in-out 0.3s;
   width: fit-content;
@@ -391,8 +415,11 @@ a.linkbutton {
 }
 
 a.linkbutton:hover {
-  background: var(--heo-main);
-  box-shadow: 0px 12px 12px -9px rgba(5, 51, 137, 0.29);
+  filter: brightness(1.2);
+}
+
+a.linkbutton:active {
+  filter: brightness(0.8);
 }
 
 .footer {
@@ -430,14 +457,17 @@ a.linkbutton:hover {
 /* banner */
 
 .product-banner {
-  background-image: linear-gradient(180deg, #02162A 0%, #000000 100%);
+  background-image: linear-gradient(180deg, #02162A 0%, #00001e 100%);
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 94px 0 0 0;
   height: fit-content;
-  margin: 50px 0;
+  margin: 40px 0;
+  overflow: hidden;
+  position: relative;
+  min-height: 800px;
 }
 
 .banner-info {
@@ -447,7 +477,7 @@ a.linkbutton:hover {
 }
 
 .product-banner .tips {
-  color: var(--heo-orange);
+  color: var(--heo-vip);
   font-size: 14px;
 }
 
@@ -456,6 +486,12 @@ a.linkbutton:hover {
   color: var(--heo-white);
   font-weight: bold;
   text-align: center;
+  line-height: 60px;
+  margin-top: 12px;
+}
+
+span.punctuation {
+  position: absolute;
 }
 
 .banner-discription-group {
@@ -480,16 +516,16 @@ a.linkbutton:hover {
 
 a.primary-button {
   padding: 8px 26px;
-  background: var(--heo-theme);
-  color: var(--heo-white);
+  background: var(--heo-white);
+  color: var(--heo-fontcolor);
   border-radius: 26px;
   transition: ease-in-out 0.3s;
   white-space: nowrap;
 }
 
 a.primary-button:hover {
-  background: var(--heo-white);
-  color: var(--heo-fontcolor);
+  background: var(--heo-black);
+  color: var(--heo-white);
 }
 
 a.second-link {
@@ -509,12 +545,13 @@ a.second-link:hover {
   display: flex;
   justify-content: center;
   height: 400px;
-  overflow: hidden;
+  position: absolute;
+  bottom: 100px;
 }
 
 .banner-pic-img {
   max-width: 968px;
-  width: 90%;
+  width: 100%;
   margin: auto;
 }
 
@@ -537,11 +574,122 @@ a.second-link:hover {
   line-height: 1;
 }
 
+.special-card {
+  background: #131202;
+  width: 90%;
+  border-radius: 30px;
+  max-width: 1200px;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  height: 500px;
+}
+
+.special-card-left {
+  padding: 54px 0 54px 75px;
+  z-index: 1;
+  width: 100%;
+  position: relative;
+}
+
+.special-card-left .tips {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--heo-white);
+}
+
+.special-card-left .title {
+  font-size: 40px;
+  font-weight: bold;
+  max-width: 400px;
+  line-height: 1.2;
+  margin-top: 8px;
+  max-width: calc(100% - 700px);
+  color: var(--heo-white);
+}
+
+.special-card-left .discription {
+  font-size: 16px;
+  margin-top: 24px;
+  opacity: 0.8;
+  line-height: 1.2;
+  max-width: calc(100% - 700px);
+  color: var(--heo-white);
+}
+
+.special-card-left .button-group {
+  position: absolute;
+  bottom: 56px;
+  display: flex;
+  align-items: center;
+}
+
+.special-card-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  display: flex;
+  z-index: 0;
+}
+
+.avatar-discription {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  padding: 24px 32px;
+  background: var(--heo-white);
+  margin: 0 5%;
+  border-radius: 12px;
+  line-height: 1.5;
+  max-width: 1200px;
+  margin-top: 18px;
+  border: var(--style-border-always);
+  box-shadow: var(--heo-shadow-border);
+}
+
+.avatar-discription-text {
+  display: flex;
+  font-size: 16px;
+  text-align: center;
+}
+
+span.avatar-name {
+  display: flex;
+  margin: auto;
+  font-size: 16px;
+  opacity: 1;
+  margin-top: 14px;
+}
+
+.avatar-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: auto;
+  margin-top: 28px;
+  border: 4px solid white;
+  box-shadow: var(--heo-shadow-lightblack);
+}
+
+.avatar-title {
+  display: flex;
+  margin: auto;
+  font-size: 14px;
+  opacity: 0.6;
+  text-align: center;
+}
+
 
 @media screen and (max-width: 1200px) {
   .group-item {
     width: 50%;
   }
+
+  .special-card {
+    display: none;
+  }
+
 }
 
 @media screen and (max-width: 768px) {
@@ -584,7 +732,7 @@ a.second-link:hover {
   }
 
   .footer .info {
-    margin-bottom: 16px;
+    margin-bottom: 12px;
   }
 
   .show-menu .nav {
@@ -607,13 +755,14 @@ a.second-link:hover {
 
   .product-banner span.title {
     font-size: 40px;
+    line-height: 46px;
   }
 
   .menu-list {
     display: flex;
     position: fixed;
     flex-direction: column;
-    top: 40px;
+    top: 60px;
     background: var(--heo-fontcolor);
     width: 100%;
     height: 0%;
@@ -644,10 +793,12 @@ a.second-link:hover {
   .banner-pic {
     margin-top: 20px;
     height: 200px;
+    bottom: 40px;
   }
 
   .product-banner {
     padding-top: 60px;
+    min-height: 520px;
   }
 
   h2.group-title {
@@ -660,6 +811,14 @@ a.second-link:hover {
 
   .banner-img {
     height: 100%;
+  }
+
+  .banner-pic-img {
+    width: 100vw;
+  }
+
+  .nav-center {
+    display: none;
   }
 }
 
@@ -692,6 +851,11 @@ a.second-link:hover {
 
   .group-info-button {
     margin-top: 0px;
+    flex-direction: column;
+  }
+
+  span.linkbotton-tips {
+    margin-top: 4px;
   }
 
   .product-group {
@@ -709,7 +873,7 @@ a.second-link:hover {
   }
 
   .banner-pic {
-    margin-top: 20px;
+    margin-top: 0px;
     height: 150px;
   }
 
@@ -723,5 +887,23 @@ a.second-link:hover {
 
   .footer {
     margin-top: 20px;
+  }
+
+  .title-group .title {
+    font-size: 35px;
+    line-height: 1.2;
+  }
+
+  span.discription-text {
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  a.about-button {
+    padding: 0 24px;
+  }
+
+  .nav-center {
+    display: none;
   }
 }
